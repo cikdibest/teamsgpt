@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.14/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.14",
+  "version": "1.0.0",
+  "id": "{{state.fx-resource-appstudio.teamsAppId}}",
+  "packageName": "com.microsoft.teams.extension",
+  "developer": {
+    "name": "Cihan Dalgicdir,",
+    "websiteUrl": "http://www.trive.com",
+    "termsOfUseUrl": "http://www.trive.com",
+    "privacyUrl": "http://www.trive.com"
+
+  },
+  "icons": {
+    "color": "{{config.manifest.icons.color}}",
+    "outline": "{{config.manifest.icons.outline}}"
+  },
+  "name": {
+    "short": "{{config.manifest.appName.short}}",
+    "full": "{{config.manifest.appName.full}}"
+  },
+  "description": {
+    "short": "{{config.manifest.description.short}}",
+    "full": "{{config.manifest.description.full}}"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "{{state.fx-resource-bot.botId}}",
+      "scopes": [
+        "personal",
+        "team",
+        "groupchat"
+      ],
+      "supportsFiles": true,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": [
+            "personal",
+            "team",
+            "groupchat"
+          ],
+          "commands": [
+            {
+              "title": "gptcompletion",
+              "description": "A gptcompletion command to send a welcome message2"
+            }
+          
+          ]
+        }
+      ]
+    }
+  ],
+  "composeExtensions": [],
+  "configurableTabs": [],
+  "staticTabs": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "{{state.fx-resource-bot.domain}}"
+  ]
+}
